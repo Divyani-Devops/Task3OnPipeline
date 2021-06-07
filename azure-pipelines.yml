@@ -31,12 +31,12 @@ stages:
        platform: '$(buildPlatform)'
        configuration: '$(buildConfiguration)'
     - script: echo 'Building application'
+    - task: PublishBuildArtifacts@1
 - stage: Publish
   jobs:
   - job: Publish
     pool: 
      name: Default
      demands: mycapability
-    
     steps:
-    - task: PublishBuildArtifacts@1
+    - script: echo 'Published'
