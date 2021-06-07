@@ -31,7 +31,7 @@ stages:
        platform: '$(buildPlatform)'
        configuration: '$(buildConfiguration)'
     - script: echo 'Building application'
-    - task: PublishBuildArtifacts@1
+    
 - stage: Publish
   jobs:
   - job: Publish
@@ -40,3 +40,4 @@ stages:
      demands: mycapability
     steps:
     - script: echo 'Published'
+    - task: PublishBuildArtifacts@1
